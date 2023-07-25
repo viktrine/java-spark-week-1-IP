@@ -11,4 +11,11 @@ class EncodeInputTest {
         EncodeInput encodeInput = new EncodeInput("A", 2);
         assertEquals(true, encodeInput instanceof  EncodeInput);
     }
+
+    // ensure a letter non empty string for input string
+    @Test
+    void isNotEmpty_nonEmptyStringProvided(){
+        EncodeInput encodeInput = new EncodeInput("A", 2);
+        assertEquals(true, encodeInput.getInputString().length() > 0);
+    }
 }
