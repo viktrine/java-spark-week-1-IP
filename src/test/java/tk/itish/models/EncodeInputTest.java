@@ -14,8 +14,15 @@ class EncodeInputTest {
 
     // ensure a letter non empty string for input string
     @Test
-    void isNotEmpty_nonEmptyStringProvided(){
+    void getInputString_nonEmptyStringProvided(){
         EncodeInput encodeInput = new EncodeInput("A", 2);
         assertEquals(true, encodeInput.getInputString().length() > 0);
+    }
+
+    // ensure a key more than 0 is given
+    @Test
+    void isValidNumber_nonZeroKeyProvided(){
+        EncodeInput encodeInput = new EncodeInput("A", 2);
+        assertEquals(true, encodeInput.getKey()  > 0);
     }
 }
