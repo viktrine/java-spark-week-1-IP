@@ -10,10 +10,17 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Kipng'etich Victor Lang'at
  */
 class EncodeTest {
-    // test key
+    // test character
     @Test
     void isValidCharacter_whenInputStringProvided_true(){
         Encode encode = new Encode();
         assertTrue(encode.isValidCharacter("asa das"));
+    }
+
+    // test key
+    @Test
+    void isValidKeyValue_whenKeyValueProvided_true(){
+        Encode encode = new Encode();
+        assertTrue(encode.isValidKeyValue(25));
     }
 }

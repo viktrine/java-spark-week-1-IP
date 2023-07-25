@@ -17,5 +17,8 @@ public class Encode {
         }
         return true;
     }
-    // define member variables
+    // // check if key > 0
+    public boolean isValidKeyValue(int key){
+        return key > 0 && key < 26;
+    }
 }
