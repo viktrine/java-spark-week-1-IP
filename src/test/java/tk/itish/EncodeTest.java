@@ -12,7 +12,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class EncodeTest {
     // test key
     @Test
-    void isIntegerKey_whenKeyIsProvided_true(){
+    void isValidCharacter_whenInputStringProvided_true(){
         Encode encode = new Encode();
+        assertTrue(encode.isValidCharacter("asa das"));
     }
 }
