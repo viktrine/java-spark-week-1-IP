@@ -64,7 +64,7 @@ public class Main {
         System.out.println("Enter input to encrypt: ");
 
         // save input entered
-        String input = scanner.nextLine();
+        String input = scanner.nextLine().toUpperCase();
 
         // prompt for input
         System.out.println("Enter key to shift for encryption: ");
@@ -87,6 +87,33 @@ public class Main {
     // decryption
     public static String decryption(){
 
-        return "";
+        // get encoding object
+        Encode encode = new Encode();
+        // define scanner
+        Scanner scanner = new Scanner(System.in);
+
+        // prompt for input
+        System.out.println("Enter input to decrypt: ");
+
+        // save input entered
+        String input = scanner.nextLine().toUpperCase();
+
+        // prompt for input
+        System.out.println("Enter key to shift for decryption: ");
+
+        // check key if int
+        try {
+            // save key entered
+            int key = Integer.parseInt(scanner.nextLine());
+
+
+            // call encryption function
+            return encode.performDecoding(input, key);
+        }catch (Exception exception){
+            System.out.println("Invalid key value. Please provide a valid number");
+        }
+
+
+        return "There was an issue decoding your input";
     }
 }
