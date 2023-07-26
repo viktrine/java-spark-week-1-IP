@@ -23,4 +23,10 @@ class EncodeTest {
         Encode encode = new Encode();
         assertTrue(encode.isValidKeyValue(25));
     }
+
+    @Test
+    void encodeString_whenOneInputStringGiven(){
+        Encode encode = new Encode();
+        assertEquals("CCCC DDDD EEEE", encode.performEncoding("AAAA BBBB CCCC", 2));
+    }
 }
