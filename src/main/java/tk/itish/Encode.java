@@ -30,6 +30,7 @@ public class Encode {
         return key > 0 && key < 26;
     }
 
+    // function for encryption
     public String performEncoding(String inputString, int key) {
         final char[] inputStringCharArray = inputString.toUpperCase().toCharArray();
 
@@ -42,6 +43,25 @@ public class Encode {
                     newString.append(inputStringCharArray[i]);
                 }else{
                 newString.append(validCharacter[(validCharacterString.indexOf(inputStringCharArray[i])  + key) % 26]);
+                }
+            }
+        }
+        return newString.toString();
+    }
+
+    // function for decryption
+    public String performDecoding(String inputString, int key) {
+        final char[] inputStringCharArray = inputString.toUpperCase().toCharArray();
+
+        // define new list
+        StringBuilder newString = new StringBuilder();
+
+        if(isValidCharacter(inputString) && isValidKeyValue(key)){
+            for(int i = 0; i < inputStringCharArray.length; i++){
+                if(inputStringCharArray[i] == ' '){
+                    newString.append(inputStringCharArray[i]);
+                }else{
+                    newString.append(validCharacter[(validCharacterString.indexOf(inputStringCharArray[i])  - key) % 26]);
                 }
             }
         }
